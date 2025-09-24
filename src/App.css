@@ -1,8 +1,1 @@
 @import url("./index.css");
-
-
-.boxHeader{
-  width: 100%;
-  background-color: var(--blue-main);
-  color: white;
-}
