@@ -3,20 +3,27 @@ import { useState, useEffect } from "react";
 
 export function useKeyCurrency() {
   const [currencies, setCurrencies] = useState([]);
+
   useEffect(() => {
-    async function getCurrencies() {
+    async function fetchCurrencies() {
       try {
-        const response = await fetch("https://v6.exchangerate-api.com/v6/1c7be34a277cb0073e935419/latest/USD");
+        const response = await fetch("https://api.frankfurter.app/currencies");
         const data = await response.json();
-        console.log(data);
-        const currencyKeys = Object.keys(data.conversion_rates);
-        setCurrencies(currencyKeys);
+
+        const currencyArray = Object.entries(data).map(([code, name]) => ({
+          code,
+          name,
+        }));
+
+        setCurrencies(currencyArray);
       } catch (erro) {
-        console.error("Error ao buscar moerdas");
+        console.error("Erro ao buscar moedas:", erro);
       }
     }
-    getCurrencies();
+
+    fetchCurrencies(); 
   }, []);
+
   return currencies;
 }
 
@@ -24,8 +31,9 @@ export default function Boxvalue() {
   const [value, setValue] = useState(1);
   const currencies = useKeyCurrency();
   return (
-    <>
+    
       <div className={styles.inputValue}>
+        <span>Valor:</span>
         <input
           type="number"
           value={value}
@@ -33,12 +41,12 @@ export default function Boxvalue() {
         />
         <select className={styles.countryCurrency}>
           {currencies.map((currency =>(
-            <option key={currency} value={currency}>
-              {currency}
+            <option key={currency} value={currency.code}>
+              {currency.code} - {currency.name}
             </option>
           )))}
         </select>
       </div>
-    </>
+    
   );
 }
