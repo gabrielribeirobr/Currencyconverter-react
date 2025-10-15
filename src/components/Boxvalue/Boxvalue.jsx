@@ -27,9 +27,10 @@ export function useKeyCurrency() {
   return currencies;
 }
 
-export default function Boxvalue() {
+export default function Boxvalue({selectedCurrency, setSelectedCurrency}) {
   const [value, setValue] = useState(1);
   const currencies = useKeyCurrency();
+
   return (
     
       <div className={styles.inputValue}>
@@ -39,9 +40,9 @@ export default function Boxvalue() {
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
-        <select className={styles.countryCurrency}>
+        <select className={styles.countryCurrency} value={selectedCurrency} onChange={(e) => setSelectedCurrency(e.target.value)}>
           {currencies.map((currency =>(
-            <option key={currency} value={currency.code}>
+            <option key={currency.code} value={currency.code}>
               {currency.code} - {currency.name}
             </option>
           )))}
