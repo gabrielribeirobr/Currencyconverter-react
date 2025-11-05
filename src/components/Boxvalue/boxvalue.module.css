@@ -1,7 +1,47 @@
 @import url("/src/index.css");
-
-.inputValue{
+*{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.inputValue {
+  padding: 10px;
   width: 500px;
   height: 100px;
-  background-color: green;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0;
 }
+
+.inputAmount {
+  background-color: var(--white);
+  border: 2px solid var(--gray);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: none; 
+  width: 80px;
+  height: 32px; 
+  padding: 0 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.countryCurrency {
+  border: 2px solid var(--gray);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 32px; 
+  padding: 0 8px;
+  font-size: 16px;
+  background-color: var(--white);
+  cursor: pointer;
+  box-sizing: border-box;
+  color: var(--gray);
+}
+
+.inputAmount::-webkit-inner-spin-button,
+.inputAmount::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+

@@ -36,6 +36,7 @@ export default function Boxvalue({selectedCurrency, setSelectedCurrency}) {
       <div className={styles.inputValue}>
         <span>Valor:</span>
         <input
+          className={styles.inputAmount}
           type="number"
           value={value}
           onChange={(e) => setValue(e.target.value)}
