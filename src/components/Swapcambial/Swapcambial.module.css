@@ -1,0 +1,10 @@
+@import url("/src/index.css");
+
+.swapBox{
+    background-color: rgb(155, 155, 155);
+    display: flex;
+}
+
+.selectedCurrency{
+    background-color: blue;
+}

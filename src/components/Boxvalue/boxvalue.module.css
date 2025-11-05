@@ -1,7 +1,7 @@
 @import url("/src/index.css");
 
 .inputValue{
-  width: 100%;
+  width: 500px;
   height: 100px;
-  background-color: var(--white);
+  background-color: green;
 }

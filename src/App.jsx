@@ -13,8 +13,9 @@ export default function App() {
         <Header />
         <Boxvalue selectedCurrency={selectedCurrency}
         setSelectedCurrency={setSelectedCurrency} />
+        <Swapcambial selectedCurrency={selectedCurrency} />
       </div>
-      <Swapcambial selectedCurrency={selectedCurrency} />
+      
     </>
   );
 }
