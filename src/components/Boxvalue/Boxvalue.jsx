@@ -7,19 +7,19 @@ export function useKeyCurrency() {
   useEffect(() => {
     async function fetchCurrencies() {
       try {
-        // Primeiro busca os nomes e códigos
+        
         const responseNames = await fetch("https://api.frankfurter.app/currencies");
         const dataNames = await responseNames.json();
 
-        // Depois busca as taxas de câmbio (em relação ao euro, por padrão)
+        
         const responseRates = await fetch("https://api.frankfurter.app/latest");
         const dataRates = await responseRates.json();
 
-        // Junta tudo
+        
         const currencyArray = Object.entries(dataNames).map(([code, name]) => ({
           code,
           name,
-          rate: dataRates.rates[code] || 1, // o "1" é pro próprio EUR (base)
+          rate: dataRates.rates[code] || 1, 
         }));
 
         setCurrencies(currencyArray);
@@ -59,3 +59,5 @@ export default function Boxvalue({selectedCurrency, setSelectedCurrency}) {
     
   );
 }
+
+
