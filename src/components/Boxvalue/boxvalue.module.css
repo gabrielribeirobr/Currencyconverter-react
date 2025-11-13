@@ -14,7 +14,7 @@
 
 .inputAmount {
   background-color: var(--white);
-  border: 2px solid var(--gray);
+  border: 1px solid var(--gray);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-right: none; 
@@ -26,7 +26,7 @@
 }
 
 .countryCurrency {
-  border: 2px solid var(--gray);
+  border: 1px solid var(--gray);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   height: 32px; 
