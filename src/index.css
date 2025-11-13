@@ -6,6 +6,14 @@
   --white: #FFFFFF;
 }
 
+*{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body{
   background-color: var(--background);
+}
+
+:global(body) {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
