@@ -1,7 +1,7 @@
 import styles from "./Swapcambial.module.css";
 import { useKeyCurrency } from "../Boxvalue/Boxvalue";
 
-export default function Swapcambial({ selectedCurrency }) {
+export default function Swapcambial({ selectedCurrency}) {
   const currencies = useKeyCurrency();
   return (
     <div className={styles.swapBox}>
