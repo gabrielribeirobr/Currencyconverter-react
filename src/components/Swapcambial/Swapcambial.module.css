@@ -4,22 +4,30 @@
   display: flex;
 }
 
-.selectedCurrency {
-  width: 80px;
+.currencySwap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 84px;
   height: 32px;
   padding: 0 8px;
   font-size: 16px;
+  font-weight: bold;
   box-sizing: border-box;
-  border: solid 2px var(--gray);
+  border: solid 1px var(--gray);
   border-radius: 5px;
+  color: var(--blue-main);
 }
 
-.desiredCurrency {
-  width: 80px;
-  height: 32px;
+.countryCurrency{
+  border: none;
+  height: 32px; 
   padding: 0 8px;
   font-size: 16px;
-  box-sizing: border-box;
-  border: solid 2px var(--gray);
-  border-radius: 5px;
+  font-weight: bold;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--blue-main);
+  
+  
 }
