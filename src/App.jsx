@@ -6,7 +6,7 @@ import Swapcambial from "./components/Swapcambial/Swapcambial";
 
 
 export default function App() {
-  const [selectedCurrency, setSelectedCurrency] = useState("USD");
+  const [selectedCurrency, setSelectedCurrency] = useState("EUR");
   const [amount, setAmount] = useState(1);
   return (
     <>
