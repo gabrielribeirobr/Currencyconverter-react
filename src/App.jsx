@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header/Headerr";
 import Boxvalue from "./components/Boxvalue/Boxvalue.jsx";
 import Swapcambial from "./components/Swapcambial/Swapcambial";
+import  { useKeyCurrency } from "./components/Boxvalue/Boxvalue.jsx";
 
 
 export default function App() {
@@ -14,6 +15,14 @@ export default function App() {
     setDestinationCurrency(e.target.value); 
   };
 
+  const currencies = useKeyCurrency();
+  const selectedCurrencyData = currencies.find(
+    (currency) => currency.code === selectedCurrency
+  );
+
+
+  const convertedValue = (amount / selectedCurrencyData.rate) * destinationCurrency;
+  console.log(convertedValue);
   return (
     <div>
       <Header />
@@ -28,6 +37,7 @@ export default function App() {
         amount={amount}
         handleChange={handleChange}
         destinationCurrency={destinationCurrency}
+        selectedCurrencyData={selectedCurrencyData}
       />
     </div>
   );
