@@ -8,24 +8,31 @@ import Swapcambial from "./components/Swapcambial/Swapcambial";
 export default function App() {
   const [selectedCurrency, setSelectedCurrency] = useState("EUR");
   const [amount, setAmount] = useState(1);
-  const [destinationCurrency, setDestinationCurrency] = useState("");
-  const handleChange = (e) => {
-        setDestinationCurrency((e).target.value);                
-      }
+  const [destinationCurrency, setDestinationCurrency] = useState("USD"); 
 
-      console.log(destinationCurrency);
+  const handleChange = (e) => {
+    setDestinationCurrency(e.target.value); 
+  };
+
   return (
-    <>
-      <div>
-        <Header />
-        <Boxvalue selectedCurrency={selectedCurrency}
-        setSelectedCurrency={setSelectedCurrency} amount={amount} setAmount={setAmount} />
-        <Swapcambial selectedCurrency={selectedCurrency} amount={amount} handleChange={handleChange} destinationCurrency={destinationCurrency}/>
-      </div>
-      
-    </>
+    <div>
+      <Header />
+      <Boxvalue
+        selectedCurrency={selectedCurrency}
+        setSelectedCurrency={setSelectedCurrency}
+        amount={amount}
+        setAmount={setAmount}
+      />
+      <Swapcambial
+        selectedCurrency={selectedCurrency}
+        amount={amount}
+        handleChange={handleChange}
+        destinationCurrency={destinationCurrency}
+      />
+    </div>
   );
 }
+
 
 
 
