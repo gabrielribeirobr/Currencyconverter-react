@@ -3,16 +3,15 @@ import "./App.css";
 import Header from "./components/Header/Headerr";
 import Boxvalue from "./components/Boxvalue/Boxvalue.jsx";
 import Swapcambial from "./components/Swapcambial/Swapcambial";
-import  { useKeyCurrency } from "./components/Boxvalue/Boxvalue.jsx";
-
+import { useKeyCurrency } from "./components/Boxvalue/Boxvalue.jsx";
 
 export default function App() {
   const [selectedCurrency, setSelectedCurrency] = useState("EUR");
   const [amount, setAmount] = useState(1);
-  const [destinationCurrency, setDestinationCurrency] = useState("USD"); 
+  const [destinationCurrency, setDestinationCurrency] = useState("BRL");
 
   const handleChange = (e) => {
-    setDestinationCurrency(e.target.value); 
+    setDestinationCurrency(e.target.value);
   };
 
   const currencies = useKeyCurrency();
@@ -20,8 +19,20 @@ export default function App() {
     (currency) => currency.code === selectedCurrency
   );
 
+  const destinationCurrencyData = currencies.find(
+    (currency) => currency.code === destinationCurrency
+  );
 
-  const convertedValue = (amount / selectedCurrencyData.rate) * destinationCurrency;
+  function handleSwap() {
+    const oldSelected = selectedCurrency;
+    const oldDestination = destinationCurrency;
+
+    setSelectedCurrency(oldDestination);
+    setDestinationCurrency(oldSelected);
+  }
+
+  const convertedValue =
+    (amount / selectedCurrencyData?.rate) * destinationCurrencyData?.rate;
   console.log(convertedValue);
   return (
     <div>
@@ -38,12 +49,8 @@ export default function App() {
         handleChange={handleChange}
         destinationCurrency={destinationCurrency}
         selectedCurrencyData={selectedCurrencyData}
+        handleSwap={handleSwap}
       />
     </div>
   );
 }
-
-
-
-
-

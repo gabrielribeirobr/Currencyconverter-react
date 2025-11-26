@@ -1,8 +1,9 @@
 import styles from "./Swapcambial.module.css";
 import { useKeyCurrency } from "../Boxvalue/Boxvalue";
-import { useState } from "react";
 
-export default function Swapcambial({ selectedCurrency, destinationCurrency, amount, handleChange, selectedCurrencyData }) {
+
+
+export default function Swapcambial({ selectedCurrency, destinationCurrency, handleSwap, handleChange, selectedCurrencyData }) {
   const currencies = useKeyCurrency();
 
   
@@ -12,7 +13,7 @@ export default function Swapcambial({ selectedCurrency, destinationCurrency, amo
         {selectedCurrency}
       </div>
 
-      <button>swap</button>
+      <button onClick={handleSwap}>swap</button>
 
       <div className={styles.currencySwap}>
         <select
@@ -21,7 +22,7 @@ export default function Swapcambial({ selectedCurrency, destinationCurrency, amo
           onChange={handleChange}
         >
           {currencies.map(currency => (
-            <option key={currency.code} value={currency.rate}> 
+            <option key={currency.code} value={currency.code}> 
               {currency.code}
             </option>
           ))}
