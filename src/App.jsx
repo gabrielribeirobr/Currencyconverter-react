@@ -34,6 +34,7 @@ export default function App() {
   const convertedValue =
     (amount / selectedCurrencyData?.rate) * destinationCurrencyData?.rate;
   console.log(convertedValue);
+  
   return (
     <div>
       <Header />
