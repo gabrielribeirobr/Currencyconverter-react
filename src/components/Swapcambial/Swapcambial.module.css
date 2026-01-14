@@ -2,6 +2,7 @@
 
 .swapBox {
   display: flex;
+  align-items: center;
 }
 
 .currencySwap {
@@ -30,4 +31,19 @@
   color: var(--blue-main);
   
   
+}
+
+.btnSwap{
+  border-radius: 50px;
+  border: none;
+  background-color: var(--blue-water);
+  color: var(--white);
+  width: 40px;
+  height: 40px;
+  font-size: large;
+  cursor: pointer;
+
+}
+.btnSwap:hover{
+  background-color: var(--blue-water-dark);
 }
