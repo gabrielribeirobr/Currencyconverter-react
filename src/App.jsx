@@ -37,6 +37,7 @@ export default function App() {
   return (
     <div>
       <Header />
+      <div className="card">
       <Boxvalue
         selectedCurrency={selectedCurrency}
         setSelectedCurrency={setSelectedCurrency}
@@ -51,6 +52,7 @@ export default function App() {
         selectedCurrencyData={selectedCurrencyData}
         handleSwap={handleSwap}
       />
+      </div> 
     </div>
   );
 }

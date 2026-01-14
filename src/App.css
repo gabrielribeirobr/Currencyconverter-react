@@ -1,1 +1,13 @@
 @import url("./index.css");
+
+.card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  max-width: 520px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
