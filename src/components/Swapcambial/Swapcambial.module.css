@@ -3,47 +3,40 @@
 .swapBox {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 20px 0;
 }
 
-.currencySwap {
+.currencyCard {
+  flex: 1;
+  height: 48px;
+  background: var(--white);
+  border-radius: 8px;
+  border: 1px solid;
+  border-color: var(--gray);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 84px;
-  height: 32px;
-  padding: 0 8px;
-  font-size: 16px;
   font-weight: bold;
-  box-sizing: border-box;
-  border: solid 1px var(--gray);
-  border-radius: 5px;
   color: var(--blue-main);
+  
 }
 
-.countryCurrency{
+.currencyCard select {
   border: none;
-  height: 32px; 
-  padding: 0 8px;
-  font-size: 16px;
+  background: transparent;
   font-weight: bold;
-  background-color: transparent;
+  font-size: 16px;
+}
+
+.swapButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--blue-water);
+  border: none;
+  color: white;
   cursor: pointer;
-  color: var(--blue-main);
-  
-  
-}
-
-.btnSwap{
-  border-radius: 50px;
-  border: none;
-  background-color: var(--blue-water);
-  color: var(--white);
-  width: 40px;
-  height: 40px;
   font-size: large;
-  cursor: pointer;
-
-}
-.btnSwap:hover{
-  background-color: var(--blue-water-dark);
 }

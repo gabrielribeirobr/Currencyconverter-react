@@ -9,26 +9,21 @@ export default function Swapcambial({ selectedCurrency, destinationCurrency, han
   
   return (
     <div className={styles.swapBox}>
-      <div className={styles.currencySwap} value={selectedCurrencyData?.rate}>
-        {selectedCurrency}
-      </div>
+  <div className={styles.currencyCard}>{selectedCurrency}</div>
 
-      <button onClick={handleSwap} className={styles.btnSwap}><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+  <button className={styles.swapButton} onClick={handleSwap}>
+    <i className="fa-solid fa-arrow-right-arrow-left"></i>
+  </button>
 
-      <div className={styles.currencySwap}>
-        <select
-          className={styles.countryCurrency}
-          value={destinationCurrency}
-          onChange={handleChange}
-        >
-          {currencies.map(currency => (
-            <option key={currency.code} value={currency.code}> 
-              {currency.code}
-            </option>
-          ))}
-        </select>
-      </div>
-    </div>
+  <div className={styles.currencyCard}>
+    <select value={destinationCurrency} onChange={handleChange}>
+      {currencies.map(c => (
+        <option key={c.code} value={c.code}>{c.code}</option>
+      ))}
+    </select>
+  </div>
+</div>
+
   );
 }
 
