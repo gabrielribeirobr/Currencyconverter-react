@@ -30,9 +30,8 @@ export default function App() {
     setSelectedCurrency(oldDestination);
     setDestinationCurrency(oldSelected);
   }
-
-  const convertedValue =
-    (amount / selectedCurrencyData?.rate) * destinationCurrencyData?.rate;
+  
+  const convertedValue = (amount / selectedCurrencyData?.rate) * destinationCurrencyData?.rate;
   console.log(convertedValue);
   
   return (
