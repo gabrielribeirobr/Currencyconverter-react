@@ -13,7 +13,7 @@ export default function Swapcambial({ selectedCurrency, destinationCurrency, han
         {selectedCurrency}
       </div>
 
-      <button onClick={handleSwap}>swap</button>
+      <button onClick={handleSwap} className={styles.btnSwap}><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
 
       <div className={styles.currencySwap}>
         <select
