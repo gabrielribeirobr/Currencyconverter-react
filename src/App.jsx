@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header/Headerr";
 import Boxvalue from "./components/Boxvalue/Boxvalue.jsx";
 import Swapcambial from "./components/Swapcambial/Swapcambial";
+import Showresult from "./components/Result/Result.jsx"
 import { useKeyCurrency } from "./components/Boxvalue/Boxvalue.jsx";
 
 export default function App() {
@@ -52,6 +53,7 @@ export default function App() {
         selectedCurrencyData={selectedCurrencyData}
         handleSwap={handleSwap}
       />
+      <Showresult result={convertedValue} amount={amount} selectedCurrency={selectedCurrency} destinationCurrency={destinationCurrency} />
       </div> 
     </div>
   );
