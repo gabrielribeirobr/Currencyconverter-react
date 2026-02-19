@@ -12,9 +12,7 @@ export default function App() {
   const [destinationCurrency, setDestinationCurrency] = useState("BRL");
   const [convertedValue, setConvertedValue] = useState(null);
 
-  const handleChange = (e) => {
-    setDestinationCurrency(e.target.value);
-  };
+ 
 
   const currencies = useKeyCurrency();
   const selectedCurrencyData = currencies.find(
