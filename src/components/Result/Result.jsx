@@ -17,7 +17,7 @@ export default function Showresult({
       {result !== null && (
         <div className={styles.resultBox}>
           <p className={styles.label}>
-            {amount} {selectedCurrency} ={" "}
+            {amount} {selectedCurrency} =
             {result.toFixed(2)} {destinationCurrency}
           </p>
 
