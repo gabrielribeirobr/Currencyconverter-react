@@ -6,7 +6,6 @@ export default function Showresult({
   selectedCurrency,
   destinationCurrency,
   onConvert,
-  isDirty
 }) {
   return (
     <>
@@ -17,15 +16,9 @@ export default function Showresult({
       {result !== null && (
         <div className={styles.resultBox}>
           <p className={styles.label}>
-            {amount} {selectedCurrency} =
+            {amount} {selectedCurrency} ={" "}
             {result.toFixed(2)} {destinationCurrency}
           </p>
-
-          {isDirty && (
-            <p className={styles.warning}>
-              Valor desatualizado. Clique em Convert novamente.
-            </p>
-          )}
         </div>
       )}
     </>

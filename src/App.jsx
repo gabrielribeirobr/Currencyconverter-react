@@ -11,7 +11,7 @@ export default function App() {
   const [amount, setAmount] = useState(1);
   const [destinationCurrency, setDestinationCurrency] = useState("BRL");
   const [convertedValue, setConvertedValue] = useState(null);
-const [isDirty, setIsDirty] = useState(false);
+
   const handleChange = (e) => {
     setDestinationCurrency(e.target.value);
   };
@@ -39,23 +39,23 @@ const [isDirty, setIsDirty] = useState(false);
         (amount / selectedCurrencyData.rate) * destinationCurrencyData.rate;
 
       setConvertedValue(result);
-      setIsDirty(false);
+      
     }
   }
 
   const handleAmountChange = (value) => {
     setAmount(value);
-    setIsDirty(true);
+    setConvertedValue(null);
   };
 
   const handleSelectedCurrencyChange = (value) => {
     setSelectedCurrency(value);
-    setIsDirty(true);
+    setConvertedValue(null);
   };
 
   const handleDestinationChange = (e) => {
     setDestinationCurrency(e.target.value);
-    setIsDirty(true);
+    setConvertedValue(null);
   };
 
   return (
@@ -80,7 +80,6 @@ const [isDirty, setIsDirty] = useState(false);
           selectedCurrency={selectedCurrency}
           destinationCurrency={destinationCurrency}
           onConvert={handleConvert}
-          isDirty={isDirty}
         />
       </div>
     </div>
