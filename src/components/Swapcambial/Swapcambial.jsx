@@ -3,7 +3,7 @@ import { useKeyCurrency } from "../Boxvalue/Boxvalue";
 
 
 
-export default function Swapcambial({ selectedCurrency, destinationCurrency, handleSwap, handleChange, selectedCurrencyData }) {
+export default function Swapcambial({ selectedCurrency, destinationCurrency, handleSwap, onDestinationChange, selectedCurrencyData }) {
   const currencies = useKeyCurrency();
 
   
@@ -16,7 +16,7 @@ export default function Swapcambial({ selectedCurrency, destinationCurrency, han
   </button>
 
   <div className={styles.currencyCard}>
-    <select value={destinationCurrency} onChange={handleChange}>
+    <select value={destinationCurrency} onChange={onDestinationChange}>
       {currencies.map(c => (
         <option key={c.code} value={c.code}>{c.code}</option>
       ))}

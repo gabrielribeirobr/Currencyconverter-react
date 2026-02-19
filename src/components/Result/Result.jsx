@@ -1,11 +1,33 @@
-import styles from "./Result.module.css"
+import styles from "./Result.module.css";
 
-export default function Showresult({result, amount, selectedCurrency, destinationCurrency}){
+export default function Showresult({
+  result,
+  amount,
+  selectedCurrency,
+  destinationCurrency,
+  onConvert,
+  isDirty
+}) {
+  return (
+    <>
+      <div className="convertBtn">
+        <button onClick={onConvert}>Convert</button>
+      </div>
 
-    return (
+      {result !== null && (
         <div className={styles.resultBox}>
-            <p>{amount} {selectedCurrency} = {result.toFixed(2)} {destinationCurrency}</p>
-    </div>
-    );
+          <p className={styles.label}>
+            {amount} {selectedCurrency} ={" "}
+            {result.toFixed(2)} {destinationCurrency}
+          </p>
 
+          {isDirty && (
+            <p className={styles.warning}>
+              Valor desatualizado. Clique em Convert novamente.
+            </p>
+          )}
+        </div>
+      )}
+    </>
+  );
 }
