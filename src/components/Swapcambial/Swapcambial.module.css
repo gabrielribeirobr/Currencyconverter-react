@@ -28,6 +28,7 @@
   background: transparent;
   font-weight: bold;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .swapButton {
