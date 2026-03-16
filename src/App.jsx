@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header/Headerr";
 import Boxvalue from "./components/Boxvalue/Boxvalue.jsx";
 import Swapcambial from "./components/Swapcambial/Swapcambial";
 import Showresult from "./components/Result/Result.jsx";
+import History from "./components/History/History.jsx";
 import { useKeyCurrency } from "./components/Boxvalue/Boxvalue.jsx";
 
 export default function App() {
@@ -11,8 +13,6 @@ export default function App() {
   const [amount, setAmount] = useState(1);
   const [destinationCurrency, setDestinationCurrency] = useState("BRL");
   const [convertedValue, setConvertedValue] = useState(null);
-
- 
 
   const currencies = useKeyCurrency();
   const selectedCurrencyData = currencies.find(
@@ -37,7 +37,17 @@ export default function App() {
         (amount / selectedCurrencyData.rate) * destinationCurrencyData.rate;
 
       setConvertedValue(result);
-      
+
+      const newItem = {
+        id: Math.floor(Math.random() * 10000),
+        amount,
+        from: selectedCurrency,
+        to: destinationCurrency,
+        result,
+        date: new Date().toLocaleString(),
+      };
+
+      setHistory((prev) => [newItem, ...prev]);
     }
   }
 
@@ -56,21 +66,26 @@ export default function App() {
     setConvertedValue(null);
   };
 
+  const [history, setHistory] = useState([]);
+  
+  
+  
+
   return (
     <div>
       <Header />
       <div className="card">
         <Boxvalue
           selectedCurrency={selectedCurrency}
-  onCurrencyChange={handleSelectedCurrencyChange}
-  amount={amount}
-  onAmountChange={handleAmountChange}
+          onCurrencyChange={handleSelectedCurrencyChange}
+          amount={amount}
+          onAmountChange={handleAmountChange}
         />
         <Swapcambial
-        selectedCurrency={selectedCurrency}
+          selectedCurrency={selectedCurrency}
           destinationCurrency={destinationCurrency}
-  onDestinationChange={handleDestinationChange}
-  handleSwap={handleSwap}
+          onDestinationChange={handleDestinationChange}
+          handleSwap={handleSwap}
         />
         <Showresult
           result={convertedValue}
@@ -79,6 +94,7 @@ export default function App() {
           destinationCurrency={destinationCurrency}
           onConvert={handleConvert}
         />
+        <History history={history} />
       </div>
     </div>
   );

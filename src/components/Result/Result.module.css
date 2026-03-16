@@ -1,6 +1,14 @@
+@import url("/src/index.css");
+
 .resultBox{
-    background-color: red;
     width: 100%;
-    
 }
+
+p{
+    font-size: 25px;
+    font-weight:bolder;
+    color: var(--blue-main);
+}
+
+
 
