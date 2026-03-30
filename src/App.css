@@ -2,12 +2,13 @@
 
 .card {
   background: var(--white);
-  border-radius: 20px;
-  padding: 24px;
+ border-radius: 0px 0px 10px 10px;
   width: 100%;
-  max-width: 520px;
-
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding-bottom: 20px;
+
+  -webkit-box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.27); 
+box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.27);
 }

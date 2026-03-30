@@ -1,7 +1,7 @@
 export default function History({ history }) {
   return (
     <div className="boxHistory">
-      <h3>
+      <p>Recent History</p>
         <ul>
           {history.map((item) => (
             <li key={item.id}>
@@ -11,7 +11,7 @@ export default function History({ history }) {
             </li>
           ))}
         </ul>
-      </h3>
+      
     </div>
   );
 }

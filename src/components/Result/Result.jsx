@@ -9,8 +9,8 @@ export default function Showresult({
 }) {
   return (
     <>
-      <div className="convertBtn">
-        <button onClick={onConvert}>Convert</button>
+      <div className={styles.convertBtn}>
+        <button  onClick={onConvert}>Convert</button>
       </div>
 
       {result !== null && (

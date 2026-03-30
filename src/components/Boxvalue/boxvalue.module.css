@@ -3,10 +3,8 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .box {
-  background: var(--white);
   padding: 20px;
   border-radius: 8px;
-  width: 100%;
   max-width: 480px;
 }
 

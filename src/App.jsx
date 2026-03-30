@@ -93,7 +93,9 @@ export default function App() {
           selectedCurrency={selectedCurrency}
           destinationCurrency={destinationCurrency}
           onConvert={handleConvert}
-        />
+        />        
+      </div>
+      <div className="historyCard">
         <History history={history} />
       </div>
     </div>

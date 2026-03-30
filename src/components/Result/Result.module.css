@@ -9,6 +9,25 @@ p{
     font-weight:bolder;
     color: var(--blue-main);
 }
+.convertBtn{
+    width: 100%px;
+    max-width: 480px;
+    display: flex;
+    justify-content: center;
+}
+button{
+  width: 60%;
+  height: 50px;
+  border-radius: 8px;
+  background: var(--blue-water);
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+}
 
-
+button:hover{
+  background-color: var(--blue-water-dark);
+}
 
