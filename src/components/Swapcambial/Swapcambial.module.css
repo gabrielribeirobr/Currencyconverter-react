@@ -15,22 +15,12 @@
   height: 48px;
   background: var(--white);
   border-radius: 8px;
-  border: 1px solid;
-  border-color: var(--gray);
+  border: 1px solid var(--gray);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
   color: var(--blue-main);
-  
-}
-
-.currencyCard select {
-  border: none;
-  background: transparent;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
 }
 
 .swapButton {
@@ -42,4 +32,121 @@
   color: white;
   cursor: pointer;
   font-size: large;
+}
+
+.customSelect {
+  flex: 1;
+  position: relative;
+  height: 48px;
+}
+
+.selectButton {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--gray);
+  background: var(--white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--blue-main);
+  transition: background-color 0.2s;
+}
+
+.selectButton:hover {
+  background-color: #f5f5f5;
+}
+
+.flagIcon {
+  display: flex;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.flagIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.currencyCode {
+  font-weight: 600;
+}
+
+.arrow {
+  font-size: 12px;
+  transition: transform 0.2s;
+  color: var(--gray);
+  margin-left: auto;
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  right: -1px;
+  background: var(--white);
+  border: 1px solid var(--gray);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: -1px;
+}
+
+.dropdownItem {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--blue-main);
+  transition: background-color 0.15s;
+  border-top: 1px solid #f0f0f0;
+}
+
+.dropdownItem:first-child {
+  border-top: none;
+}
+
+.dropdownItem:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdownItem.selected {
+  background-color: #e8f4f8;
+}
+
+.flagIconSmall {
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.flagIconSmall svg {
+  width: 100%;
+  height: 100%;
+}
+
+.itemCode {
+  font-weight: 600;
 }

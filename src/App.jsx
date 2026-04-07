@@ -61,8 +61,9 @@ export default function App() {
     setConvertedValue(null);
   };
 
-  const handleDestinationChange = (e) => {
-    setDestinationCurrency(e.target.value);
+  const handleDestinationChange = (valueOrEvent) => {
+    const value = valueOrEvent.target?.value || valueOrEvent;
+    setDestinationCurrency(value);
     setConvertedValue(null);
   };
 
