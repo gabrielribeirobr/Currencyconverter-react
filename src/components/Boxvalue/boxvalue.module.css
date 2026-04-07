@@ -45,7 +45,6 @@ label {
   -moz-appearance: none;
 }
 
-/* Select Customizado */
 .customSelect {
   flex: 0 0 auto;
   min-width: 200px;
