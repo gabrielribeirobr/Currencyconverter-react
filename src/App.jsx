@@ -96,9 +96,11 @@ export default function App() {
           onConvert={handleConvert}
         />        
       </div>
+      {history.length > 0 && ( 
       <div className="historyCard">
         <History history={history} />
       </div>
+      )}
     </div>
   );
 }

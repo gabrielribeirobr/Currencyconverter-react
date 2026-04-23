@@ -12,7 +12,7 @@
 
 .currencyCard {
   flex: 1;
-  height: 48px;
+  height: 44px;
   background: var(--white);
   border-radius: 8px;
   border: 1px solid var(--gray);
@@ -37,7 +37,7 @@
 .customSelect {
   flex: 1;
   position: relative;
-  height: 48px;
+  height: 44px;
 }
 
 .selectButton {

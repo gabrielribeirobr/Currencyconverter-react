@@ -1,6 +1,8 @@
+import styles from "./History.module.css";
+
 export default function History({ history }) {
   return (
-    <div className="boxHistory">
+    <div className={styles.boxHistory}>
       <p>Recent History</p>
         <ul>
           {history.map((item) => (
